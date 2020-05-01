@@ -1,0 +1,4 @@
+- hosts: centos-0
+  tasks:
+    - debug :
+         msg: "{{ TXT }}"

@@ -1,0 +1,57 @@
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins-ansible
+    build:
+      context: dockfiles/jenkins-ansible
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data/jenkinsdata/jenkins_home:/var/jenkins_home
+    networks:
+      - net
+  centos-0:
+    container_name: centos-0
+    image: centos
+    build:
+      context: dockfiles/centos-0
+    volumes:
+      - /data:/data/jenkins/dockfiles/
+      - /vo01:/vo01
+    networks:
+      - net
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    environment:
+      - "MYSQL_ROOT_PASSWORD=admin"
+    volumes:
+      - ./data/mysqldata/:/var/lib/mysql
+    networks:
+      - net
+  mywebapp:
+    container_name: myphp-webapp
+    image: myphp-webapp
+    build:
+      context: ./dockfiles/jenkins-ansible/web/
+    ports:
+      - "80:80"
+    networks:
+      - net
+  gilab:
+    container_name: gitlab
+    image: gitlab/gitlab-ce:latest
+    hostname: gitlab.genx.com
+    ports:
+      - 8081:80
+    volumes:
+      - $GITLAB_HOME/gitlab/config:/etc/gitlab
+      - $GITLAB_HOME/gitlab/logs:/var/log/gitlab
+      - $GITLAB_HOME/gitlab/data:/var/opt/gitlab
+    networks:
+      - net
+
+ 
+networks:
+  net:  

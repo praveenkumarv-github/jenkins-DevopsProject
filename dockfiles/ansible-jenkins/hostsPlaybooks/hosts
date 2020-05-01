@@ -1,0 +1,7 @@
+[all:vars]
+
+ansible_connection = ssh
+
+[centos]
+
+centos-0 ansible_hostname=centos-0 ansible_user=root ansible_private_key_file=/var/jenkins_home/ansible-jenkins/remote-key

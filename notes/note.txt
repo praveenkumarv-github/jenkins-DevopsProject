@@ -1,0 +1,11 @@
+mother folder:
+data               -datavolume for jenkins+mysql
+docker-compose.yml  -compose file
+dockfiles           -images repositories for jenkins+centos-0+php
+
+
+
+####lives inside the jenkins_home 
+####conf (playbooks + inventory for ansible )
+ansible-jenkins
+

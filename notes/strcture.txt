@@ -1,0 +1,17 @@
+####
+jenkins+ansible =master
+
+mysql = db
+
+phph-server = webserver
+
+
+####
+1.execting ansible playbooks in jenkins!
+
+2.playbook contains command to copy the  jinja file to webpage location /var/www/html/ 
+
+
+3.where jinjafile have to be passed parameteres i.e age 
+
+4. based on the parameter the webpage will created.

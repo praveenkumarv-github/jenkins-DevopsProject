@@ -1,0 +1,5 @@
+- hosts: centos-0
+  tasks:
+    - shell: bash /root/scrpits/jenkinsbackup.sh
+
+

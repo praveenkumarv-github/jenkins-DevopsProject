@@ -36,3 +36,13 @@ If the directory doesn't have 1000 permissions,
  which causes the container to exit."           
 
 ***
+enable the firewall port for jenkins+gitlab+phpwebapp
+firewall-cmd --permanent --zone=public --add-port=8080/tcp
+firewall-cmd --permanent --zone=public --add-port=8081/tcp
+firewall-cmd --permanent --zone=public --add-port=80/tcp
+
+
+
+
+
+

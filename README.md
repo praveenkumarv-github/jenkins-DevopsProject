@@ -40,7 +40,7 @@ enable the firewall port for jenkins+gitlab+phpwebapp
 firewall-cmd --permanent --zone=public --add-port=8080/tcp
 firewall-cmd --permanent --zone=public --add-port=8081/tcp
 firewall-cmd --permanent --zone=public --add-port=80/tcp
-firewall-cmd --reload
+firewall-cmd --reload 
 
 
 

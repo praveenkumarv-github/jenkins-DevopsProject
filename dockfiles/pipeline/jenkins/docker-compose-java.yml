@@ -1,0 +1,7 @@
+version: '3'
+service:
+  app:
+    image: "app:$BUILD_TAG"
+    build:
+      context: .
+      dokcerfile: Dokcerfile-java
